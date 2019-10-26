@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
 .translate-y-n1 {
   transform: translateY(-1rem);
+}
+
+html {
+  @apply overflow-y-scroll overflow-x-hidden h-full;
+}
+
+body {
+  @apply h-full;
+}
+
+#root {
+  @apply antialiased flex-auto flex flex-col min-h-full max-w-full relative backface-hidden;
 }

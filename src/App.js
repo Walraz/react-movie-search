@@ -61,31 +61,29 @@ function App() {
   const { items, loading, error } = state
 
   return (
-    <div className="antialiased w-screen h-screen flex flex-col overflow-x-hidden font-sans">
+      <div className="flex-1 flex flex-col">
 
       <SearchField placeholder="Search movie..." onSearch={dispatch} onClear={getPopular} />
 
-      <div className="container mx-auto p-4 flex flex-col h-full pt-32">
-        <div className="flex flex-wrap justify-center">
+      <div className="container mx-auto p-4 flex flex-col flex-1 pt-16 md:pt-32">
+        <div className="flex flex-wrap justify-center -mx-2 flex-grow">
         { 
           loading ?
           <div className="text-lg text-gray-500">Searching...</div> :
           !loading && error ?
           <div className="text-lg text-gray-500 flex flex-col justify-content">
             { error }
-            <button className="underline font-bold text-green-500" onClick={getPopular}>Back to popular</button>
+            <button className="underline font-bold text-green-500 focus:outline-none" onClick={getPopular}>Back to popular</button>
           </div> :
           !loading && !items.length ?
           <div className="text-lg text-gray-500">Find for a movie!</div> :
           items.map(item => <MovieItem key={item.id} item={item} />)
         }
         </div>
-
         <footer className="mt-auto">
-          <Attribution/>
+        <Attribution />
         </footer>
       </div>
-
     </div>
   );
 }
