@@ -7,7 +7,7 @@ function MovieItem(props) {
   const { poster_path, title, release_date, id } = props.item
   const imagePath = IMG_BASE_URL + poster_path
 
-  useEffect(() => fadeInTop(`[data-movie-item="${id}"]`))
+  useEffect(() => fadeInTop(`[data-movie-item="${id}"]`), [id])
 
   return (
     <div data-movie-item={id} className="transition-all opacity-0 translate-y-n1 w-full md:w-64 flex flex-col rounded shadow m-2 bg-white relative overflow-hidden">
