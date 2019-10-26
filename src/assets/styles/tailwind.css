@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.translate-y-n1 {
+  transform: translateY(-1rem);
+}
