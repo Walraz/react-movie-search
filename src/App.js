@@ -61,7 +61,7 @@ function App() {
   const { items, loading, error } = state
 
   return (
-    <div className="antialiased w-screen h-screen flex flex-col overflow-x-hidden">
+    <div className="antialiased w-screen h-screen flex flex-col overflow-x-hidden font-sans">
 
       <SearchField placeholder="Search movie..." onSearch={dispatch} onClear={getPopular} />
 
